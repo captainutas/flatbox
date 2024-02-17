@@ -195,6 +195,9 @@ void sendReport() {
 }
 
 void setup() {
+  MCUCR |= _BV(JTD); //puchi-c compatability fix
+  MCUCR |= _BV(JTD); 
+
   static HIDSubDescriptor node(hidReportDescriptor, sizeof(hidReportDescriptor));
   HID().AppendDescriptor(&node);
 
